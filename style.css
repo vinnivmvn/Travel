@@ -1,4 +1,22 @@
 :root{
+  --bg:#0b1220;           /* deep navy */
+  --card:#131a2b;
+  --ink:#e8eefc;          /* near-white */
+  --muted:#a7b3d1;
+  --accent:#4fc3f7;       /* sky */
+  --accent-2:#8e7dff;     /* violet */
+  --ring: 0 10px 30px rgba(79,195,247,.2);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--ink);background:radial-gradient(1200px 800px at 10% -10%, #16213a 0%, transparent 50%),var(--bg);
+  line-height:1.6;
+}
+img{max-width:100%;display:block;border-radius:12px}
+
+/* ---------- Layout ---------- */
 .container{width:min(1100px, 92%);margin-inline:auto}
 .grid{display:grid;gap:1.2rem}
 .grid.cols-3{grid-template-columns:repeat(3, minmax(0,1fr))}
@@ -6,10 +24,8 @@
 @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
 
-
 .card{background:linear-gradient(180deg, #121a2b 0%, #0e1526 100%);border:1px solid #1c2740;padding:1rem;border-radius:16px;box-shadow:var(--ring)}
 .card:hover{transform:translateY(-2px);transition:.25s ease}
-
 
 /* ---------- Header / Nav ---------- */
 header{position:sticky;top:0;background:rgba(11,18,32,.85);backdrop-filter: blur(10px);border-bottom:1px solid #1e2741;z-index:10}
@@ -21,37 +37,31 @@ header{position:sticky;top:0;background:rgba(11,18,32,.85);backdrop-filter: blur
 .menu a{color:var(--ink);text-decoration:none;padding:.45rem .8rem;border-radius:999px;border:1px solid transparent}
 .menu a:hover,.menu a.active{border-color:#28406a;background:#0e1a30}
 
-
 /* ---------- Hero ---------- */
 .hero{padding:3.5rem 0 2.5rem}
 .hero .banner{border-radius:18px;overflow:hidden;position:relative}
 .hero h1{font-size:clamp(1.8rem, 2.8vw, 2.6rem);margin:.6rem 0}
 .lead{color:var(--muted)}
 
-
 /* ---------- Footer ---------- */
 footer{margin-top:3rem;border-top:1px solid #1e2741;padding:1.5rem 0;color:var(--muted)}
 footer .credits{display:flex;gap:.6rem;flex-wrap:wrap}
-
 
 /* ---------- Components ---------- */
 .btn{display:inline-block;padding:.6rem .95rem;border:1px solid #28406a;border-radius:12px;text-decoration:none;color:var(--ink);background:#0e1a30}
 .btn:hover{border-color:var(--accent);box-shadow:0 6px 18px rgba(79,195,247,.2)}
 .badge{font-size:.8rem;color:#09233a;background:linear-gradient(135deg,#b9eaff,#d8d2ff);padding:.15rem .55rem;border-radius:999px}
 
-
 /* Country list */
 .country-card img.flag{aspect-ratio: 3/2;object-fit:cover}
 .country-card h3{margin:.6rem 0}
 .country-card a{color:var(--accent)}
-
 
 /* Wonder cards */
 .wonder{display:grid;grid-template-columns: 240px 1fr;gap:1rem;align-items:start}
 @media (max-width:720px){.wonder{grid-template-columns:1fr}}
 .wonder h3{margin:.2rem 0}
 .meta{color:var(--muted);font-size:.95rem}
-
 
 /* details / summary reveal */
 details{margin-top:.5rem;border:1px solid #213055;border-radius:12px;overflow:hidden}
@@ -63,24 +73,20 @@ summary{cursor:pointer;padding:.7rem 1rem;background:#0f1930;color:var(--ink);fo
 .price{font-weight:700}
 .rating{font-weight:600}
 
-
 /* Blog */
 .post img{aspect-ratio: 16/9;object-fit:cover}
 .post h3{margin:.4rem 0}
 .date{color:var(--muted);font-size:.9rem}
-
 
 /* Forms */
 form{display:grid;gap:.8rem}
 input,textarea{background:#0f1930;border:1px solid #263456;border-radius:10px;color:var(--ink);padding:.7rem}
 label{font-weight:600}
 
-
 /* Tables for Tips */
 .table{width:100%;border-collapse:collapse}
 .table th,.table td{border:1px solid #263456;padding:.7rem;text-align:left}
 .table th{background:#0f1930}
-
 
 /* Utilities */
 .section{padding:2rem 0}
